@@ -44,9 +44,17 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static("public"));
 
+////////////////
+/////ROUTES/////
+////////////////
+
 app.get("/", (req, res) => {
     res.send("This server is running like it should")
 })
+
+//////////////////////
+///////LISTENER///////
+//////////////////////
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
