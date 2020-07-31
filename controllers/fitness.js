@@ -31,4 +31,14 @@ const update = async (req, res) => {
     }
 }
 
-module.exports = {index, create, update}
+const destroy = async (req, res) => {
+    try {
+        const deleteFitness =  await Fitness.findByIdAndDelete(req.params.id);
+        res.status(200).json(deleteFitness);
+    }
+    catch (error) {
+        res.status(400).send(error);
+    }
+}
+
+module.exports = {index, create, update, destroy}
