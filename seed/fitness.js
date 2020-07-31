@@ -20,8 +20,8 @@ const fitnessSeed = [
                 reps: 10,
                 directionVideo: "somethingelse.com" 
             }
-        ]
-    },
+        ],
+    },  
     {
         day: 2,
         exercises: [
@@ -44,7 +44,9 @@ const fitnessSeed = [
 ]
 
 
-  Fitness.insertMany(fitnessSeed,
+const fitnessSeeding = async () => {
+    await Fitness.deleteMany({});
+    await Fitness.insertMany(fitnessSeed,
     (err, res) => {
         if (err) {
             console.log(err);
@@ -53,3 +55,6 @@ const fitnessSeed = [
         }
         mongoose.connection.close()
     })
+}
+
+fitnessSeeding()

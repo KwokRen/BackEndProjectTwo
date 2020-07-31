@@ -6,7 +6,8 @@ const foodSchema = new Schema(
         dayNumber: Number,
         breakfast: [String],
         lunch: [String],
-        dinner: [String]
+        dinner: [String],
+        fitnessId: String
     }
 );
 
