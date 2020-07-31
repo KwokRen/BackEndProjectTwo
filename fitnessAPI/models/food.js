@@ -3,9 +3,9 @@ const { Schema, model } = require("mongoose");
 
 const foodSchema = new Schema(
     {
-        breakfast: String,
-        lunch: String,
-        dinner: String
+        breakfast: [String],
+        lunch: [String],
+        dinner: [String]
     }
 );
 
