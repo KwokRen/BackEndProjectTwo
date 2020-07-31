@@ -21,4 +21,14 @@ const create = async (req, res) => {
     }
 }
 
-module.exports = {index, create}
+const update = async (req, res) => {
+    try {
+        const updateFitness =  await Fitness.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.status(200).json(updateFitness);
+    }
+    catch (error) {
+        res.status(400).send(error);
+    }
+}
+
+module.exports = {index, create, update}
