@@ -1,8 +1,8 @@
 const db = require('../db/connection.js');
-const Exercise = require('../models/exercise.js');
+const Fitness = require('../models/fitness.js');
 const mongoose = require('../db/connection.js');
 
-const exerciseSeed = [
+const fitnessSeed = [
     {
         routine: "Squat",
         difficulty: "High",
@@ -33,7 +33,7 @@ const exerciseSeed = [
     }
   ]
 
-  Exercise.insertMany(exerciseSeed,
+  Fitness.insertMany(fitnessSeed,
     (err, res) => {
         if (err) {
             console.log(err);

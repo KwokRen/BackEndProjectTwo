@@ -1,7 +1,7 @@
 const db = require('../db/connection.js');
 const { Schema, model } = require("mongoose");
 
-const exerciseSchema = new Schema(
+const fitnessSchema = new Schema(
     {
         routine: String,
         difficulty: String,
@@ -11,5 +11,5 @@ const exerciseSchema = new Schema(
     }
 );
 
-const exercise = model('exercise', exerciseSchema);
-module.exports = exercise;
+const fitness = model('fitness', fitnessSchema);
+module.exports = fitness;
