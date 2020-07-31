@@ -19,6 +19,15 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 My first CRUD website will be a fitness website. This website I create will allow you to add different exercise regimens, videos of how the exercises are conducted. You will also be able to add a food tracker to plan out your meals so you can stay in tip top shape!
 
+## User Stories
+
+- Users will be able to enter the page and use the navigation bar
+- Users will be able to input their preferred exercises, or choose one of the ones that were already on to perform
+- Users can add more exercises to the list
+- Users can remove exercises they do not want
+- Users can also keep track of their daily meals
+- Users can add, delete or edit their food 
+
 ## Wireframes
 
 My website is pretty simple. The top will include a navigation bar. Below it will have a banner of sort displaying information about the website. Following that will be the exercise tracker and then the food tracker. Mobile, Tablet and Desktop designs all look very similar in terms of blocks and color schemes.
