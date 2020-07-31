@@ -3,12 +3,14 @@ const { Schema, model } = require("mongoose");
 
 const fitnessSchema = new Schema(
     {
-        day: String,
-        exercise : {
-            routines: [String],
+        day: Number,
+        exercises: [{
+            routine: String,
             difficulty: String,
+            sets: Number,
+            reps: Number,
             directionVideo: String,
-        },
+        }],
         food: [{type:Schema.Types.ObjectId, ref:'food'}]
     }
 );

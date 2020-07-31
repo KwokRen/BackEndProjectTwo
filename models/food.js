@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 
 const foodSchema = new Schema(
     {
+        dayNumber: Number,
         breakfast: [String],
         lunch: [String],
         dinner: [String]
