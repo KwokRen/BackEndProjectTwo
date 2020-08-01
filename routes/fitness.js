@@ -1,11 +1,13 @@
 const express = require('express');
 const fitnessRouter = express.Router();
-const {index, getOne, create, foodUpdate, fitnessUpdate, destroy} = require('../controllers/fitness');
+const {indexFitness, indexFood, getOneFitness, create, foodUpdate, fitnessUpdate, destroy} = require('../controllers/fitness');
 const fitness = require('../controllers/fitness');
 
-fitnessRouter.get('/', index);
+fitnessRouter.get('/', indexFitness);
 
-fitnessRouter.get('/:id', getOne);
+fitnessRouter.get('/food', indexFood);
+
+fitnessRouter.get('/:id', getOneFitness);
 
 fitnessRouter.post('/', create);
 

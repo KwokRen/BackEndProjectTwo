@@ -14,8 +14,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 // requiring mongoose so front end can communicate with back end
 const mongoose = require('mongoose');
-const fitnessRouter = require('./routes/fitness.js')
-const foodRouter = require('./routes/food.js')
+const fitnessRouter = require('./routes/fitness.js');
 
 /////////////////////////////
 ///////GLOBAL VARIABLES//////
