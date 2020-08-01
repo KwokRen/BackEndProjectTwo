@@ -44,14 +44,21 @@ const getOneFood = async (req, res) => {
 
 const create = async (req, res) => {
     try {
-        const createFitness =  await Fitness.create(req.body[0]);
-        await createFitness.save();
-        const createFood = await Food.create(req.body[1]);
-        await createFood.save();
-        await createFitness.food.push(createFood._id);
-        await createFitness.save();
-        await createFood.fitnessId.push(createFitness._id);
-        await createFood.save();
+        const createFitness = async () => {
+            const fitnessCreation = await Fitness.create(req.body[0]);
+            return fitnessCreation
+        } 
+        const createFood = async () =>  {
+            const foodCreation = await Food.create(req.body[1]);
+            return foodCreation
+        }
+        const [fitness1, food1] = await Promise.all([createFitness(), createFood()])
+        await fitness1.food.push(food1._id)
+        await fitness1.save()
+        await food1.fitnessId.push(fitness1._id)
+        await food1.save()
+        console.log(fitness1);
+        console.log(food1);
         const allFitness =  await Fitness.find().populate('food');
         res.status(200).json(allFitness);
     }
@@ -59,6 +66,7 @@ const create = async (req, res) => {
         res.status(400).send(error);
     }
 }
+
 const fitnessUpdate = async (req, res) => {
     try {
         const updateFitness =  await Fitness.findByIdAndUpdate(req.params.id, req.body, {new: true});
