@@ -1,6 +1,6 @@
 const express = require('express');
 const fitnessRouter = express.Router();
-const {indexFitness, indexFood, getOneFitness, create, foodUpdate, fitnessUpdate, destroy} = require('../controllers/fitness');
+const {indexFitness, indexFood, getOneFitness, create, foodUpdate, fitnessUpdate, destroyFitness, destroyFood} = require('../controllers/fitness');
 const fitness = require('../controllers/fitness');
 
 fitnessRouter.get('/', indexFitness);
@@ -15,6 +15,8 @@ fitnessRouter.put('/:id', fitnessUpdate);
 
 fitnessRouter.put('/food/:id', foodUpdate);
 
-fitnessRouter.delete('/:id', destroy);
+fitnessRouter.delete('/:id', destroyFitness);
+
+fitnessRouter.delete('/food/:id', destroyFood);
 
 module.exports = fitnessRouter
