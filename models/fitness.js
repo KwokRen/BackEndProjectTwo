@@ -11,7 +11,7 @@ const fitnessSchema = new Schema(
             reps: Number,
             directionVideo: String,
         }],
-        food: [{type:Schema.Types.ObjectId, ref:'foods'}]
+        food: [{type:Schema.Types.ObjectId, ref:'food'}]
     }
 );
 
