@@ -44,9 +44,15 @@ const getOneFood = async (req, res) => {
 
 const create = async (req, res) => {
     try {
-        const fitnessCreation = await Fitness.create(req.body[0]);
-        const foodCreation = await Food.create(req.body[1]);  
-        const [fitness1, food1] = await Promise.all([fitnessCreation, foodCreation])
+        const createFitness = async () => {
+            const fitnessCreation = await Fitness.create(req.body[0]);
+            return fitnessCreation
+        } 
+        const createFood = async () =>  {
+            const foodCreation = await Food.create(req.body[1]);
+            return foodCreation
+        }
+        const [fitness1, food1] = await Promise.all([createFitness(), createFood()])
         await fitness1.food.push(food1._id)
         await fitness1.save()
         await food1.fitnessId.push(fitness1._id)
