@@ -14,7 +14,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 // requiring mongoose so front end can communicate with back end
 const mongoose = require('mongoose');
-const fitnessRouter = require('./routes/routes.js')
+const fitnessRouter = require('./routes/fitness.js')
+const foodRouter = require('./routes/food.js')
 
 /////////////////////////////
 ///////GLOBAL VARIABLES//////
@@ -69,6 +70,8 @@ app.use(express.static("public"));
 ////////////////
 
 app.use("/fitness", fitnessRouter);
+app.use("/food", foodRouter);
+
 
 app.get("/", (req, res) => {
     res.send("This server is running like it should")

@@ -11,6 +11,16 @@ const index = async (req, res) => {
     }
 }
 
+const getOne = async (req, res) => {
+    try {
+        const oneFitness =  await Fitness.findById(req.params.id);
+        res.status(200).json(oneFitness);
+    }
+    catch (error) {
+        res.status(400).send(error);
+    }
+}
+
 const create = async (req, res) => {
     try {
         const createFitness =  await Fitness.create(req.body);
@@ -41,4 +51,4 @@ const destroy = async (req, res) => {
     }
 }
 
-module.exports = {index, create, update, destroy}
+module.exports = {index, getOne, create, update, destroy}
