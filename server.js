@@ -70,7 +70,7 @@ app.use(express.static("public"));
 ////////////////
 
 app.use("/fitness", fitnessRouter);
-app.use("/food", foodRouter);
+// app.use("/food", foodRouter);
 
 
 app.get("/", (req, res) => {
