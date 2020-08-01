@@ -38,15 +38,25 @@ const create = async (req, res) => {
     }
 }
 
-// const update = async (req, res) => {
-//     try {
-//         const updateFitness =  await Fitness.findByIdAndUpdate(req.params.id, req.body, {new: true});
-//         res.status(200).json(updateFitness);
-//     }
-//     catch (error) {
-//         res.status(400).send(error);
-//     }
-// }
+const fitnessUpdate = async (req, res) => {
+    try {
+        const updateFitness =  await Fitness.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.status(200).json(updateFitness);
+    }
+    catch (error) {
+        res.status(400).send(error);
+    }
+}
+
+const foodUpdate = async (req, res) => {
+    try {
+        const updateFood =  await Food.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.status(200).json(updateFood);
+    }
+    catch (error) {
+        res.status(400).send(error);
+    }
+}
 
 const destroy = async (req, res) => {
     try {
@@ -58,4 +68,4 @@ const destroy = async (req, res) => {
     }
 }
 
-module.exports = {index, getOne, create, destroy}
+module.exports = {index, getOne, create, foodUpdate, fitnessUpdate, destroy}
