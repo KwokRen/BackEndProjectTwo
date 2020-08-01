@@ -7,7 +7,7 @@ const foodSchema = new Schema(
         breakfast: [String],
         lunch: [String],
         dinner: [String],
-        fitnessId: [{type:Schema.Types.ObjectId, ref:'fitness'}]
+        fitnessId: {type:Schema.Types.ObjectId, ref:'fitness'}
     }
 );
 
