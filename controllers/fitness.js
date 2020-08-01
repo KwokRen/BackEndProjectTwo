@@ -45,7 +45,9 @@ const getOneFood = async (req, res) => {
 const create = async (req, res) => {
     try {
         const createFitness =  await Fitness.create(req.body[0]);
+        await createFitness.save();
         const createFood = await Food.create(req.body[1]);
+        await createFood.save();
         await createFitness.food.push(createFood._id);
         await createFitness.save();
         await createFood.fitnessId.push(createFitness._id);
@@ -57,7 +59,6 @@ const create = async (req, res) => {
         res.status(400).send(error);
     }
 }
-
 const fitnessUpdate = async (req, res) => {
     try {
         const updateFitness =  await Fitness.findByIdAndUpdate(req.params.id, req.body, {new: true});
