@@ -57,7 +57,7 @@ const create = async (req, res) => {
         await fitness1.save()
         await food1.fitnessId.push(fitness1._id)
         await food1.save()
-        const allFitness =  await Fitness.find().populate('food');
+        const allFitness =  await Fitness.find(fitness1._id).populate('food');
         res.status(200).json(allFitness);
     }
     catch (error) {
