@@ -55,7 +55,7 @@ The website is made with HTML, CSS, and JavaScript in the frontend. I also used 
 - Learn how to use reference ObjectId's in a easier way
 - Adding more routes (i.e. deleting one food, creating food seperately)
 
-## [Read about how I created my frontend](https://github.com/KwokRen/FrontEndProjectTwo/blob/master/planning_directory/README.md)
+## [Read about how I created my frontend](https://github.com/KwokRen/FrontEndProjectTwo/blob/master/README.md)
 
 # The Backend
 
