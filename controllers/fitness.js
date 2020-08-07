@@ -52,6 +52,7 @@ const create = async (req, res) => {
             const foodCreation = await Food.create(req.body[1]);
             return foodCreation
         }
+        // destructuring 
         const [fitness1, food1] = await Promise.all([createFitness(), createFood()])
         await fitness1.food.push(food1._id)
         await fitness1.save()
